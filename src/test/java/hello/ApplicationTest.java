@@ -54,5 +54,17 @@ public class ApplicationTest {
         mockMvc.perform(get("/greeting").param("name", "Greg"))
                 .andExpect(content().string(containsString("Hello, Greg!")));
     }
+    
+    @Test
+    public void aboutUs() throws Exception {
+        mockMvc.perform(get("/about-us"))
+                .andExpect(content().string(containsString("And Charlie already ate all of the Juicy Fruit!!!")));
+    }
+    
+    @Test
+    public void aboutUsWithUser() throws Exception {
+        mockMvc.perform(get("/about-us").param("dbfName", "Aaron"))
+                .andExpect(content().string(containsString("And Aaron already ate all of the Juicy Fruit!!!")));
+    }
 
 }
