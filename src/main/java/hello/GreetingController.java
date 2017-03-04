@@ -13,5 +13,11 @@ public class GreetingController {
         model.addAttribute("name", name);
         return "greeting";
     }
+    
+    @RequestMapping("/about-us")
+    public String aboutUs(@RequestParam(value="dbfName", required=true, defaultValue="Charlie") String dbfName, Model dbf) {
+    	dbf.addAttribute("dbfName", dbfName);
+    	return "about-us";
+    }
 
 }
