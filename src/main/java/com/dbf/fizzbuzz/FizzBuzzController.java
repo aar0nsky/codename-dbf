@@ -1,4 +1,4 @@
-package com.dbf.controller;
+package com.dbf.fizzbuzz;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,12 +12,17 @@ public class FizzBuzzController {
 	
 	FizzBuzzService fizzBuzzService = new FizzBuzzService();
 	
+	@RequestMapping("/fizzbuzz-landing")
+    public String landing() {
+        return "fizzbuzz/fizzbuzz-landing";
+    }
+	
 	@RequestMapping("/fizzbuzz")
-    public String greeting(@RequestParam(value="num", required=false, defaultValue="15") String numberOfItems, Model model) {
+    public String fizzBuzz(@RequestParam(value="num", required=false, defaultValue="15") String numberOfItems, Model model) {
 		String fizzBuzzString = this.fizzBuzzService.fizzBuzz(Integer.parseInt(numberOfItems));
 		
 		model.addAttribute("fizzBuzzString", fizzBuzzString);
 		
-        return "fizzbuzz";
+        return "fizzbuzz/fizzbuzz-results";
     }
 }
