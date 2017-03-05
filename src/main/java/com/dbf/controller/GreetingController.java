@@ -1,4 +1,4 @@
-package com.dbf.Controller;
+package com.dbf.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
