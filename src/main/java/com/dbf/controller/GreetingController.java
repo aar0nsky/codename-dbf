@@ -19,5 +19,10 @@ public class GreetingController {
     	dbf.addAttribute("dbfName", dbfName);
     	return "about-us";
     }
+    
+    @RequestMapping("/layout")
+    public String landing() {
+        return "layout-test";
+    }
 
 }
