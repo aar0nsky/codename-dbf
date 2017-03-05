@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package hello;
+package tst.dbf;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -27,6 +27,11 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+
+/*
+ * These tests were working earlier. 
+ * Moved package for this test class, now get an illegal state exception when trying to run.
+ */
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
