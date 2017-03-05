@@ -5,8 +5,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.dbf.service.FizzBuzzService;
-
 @Controller
 public class FizzBuzzController {
 	
@@ -17,7 +15,7 @@ public class FizzBuzzController {
         return "fizzbuzz/fizzbuzz-landing";
     }
 	
-	@RequestMapping("/fizzbuzz")
+	@RequestMapping("/fizzbuzz-results")
     public String fizzBuzz(@RequestParam(value="num", required=false, defaultValue="15") String numberOfItems, Model model) {
 		String fizzBuzzString = this.fizzBuzzService.fizzBuzz(Integer.parseInt(numberOfItems));
 		

@@ -1,4 +1,4 @@
-package com.dbf.service;
+package com.dbf.fizzbuzz;
 
 public class FizzBuzzService {
 

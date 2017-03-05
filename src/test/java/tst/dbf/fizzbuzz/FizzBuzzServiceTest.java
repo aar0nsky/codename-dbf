@@ -1,4 +1,4 @@
-package tst.dbf.service;
+package tst.dbf.fizzbuzz;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import com.dbf.service.FizzBuzzService;
+import com.dbf.fizzbuzz.FizzBuzzService;
 
 @RunWith(MockitoJUnitRunner.class)
 public class FizzBuzzServiceTest {
