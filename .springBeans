@@ -7,7 +7,7 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>java:com.dbf.Controller.Application</config>
+		<config>java:tst.dbf.Controller.Application</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
