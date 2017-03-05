@@ -12,17 +12,17 @@ public class FizzBuzzService {
 		
 		for (int i = 0; i < inputArray.length; i++) {
 			if (inputArray[i] % 3 == 0 && inputArray[i] % 5 == 0) {
-				resultBuilder.append("FizzBuzz");
+				resultBuilder.append("FizzBuzz ");
 			} else if (inputArray[i] % 3 == 0) {
-				resultBuilder.append("Fizz");
+				resultBuilder.append("Fizz ");
 			} else if (inputArray[i] % 5 == 0) {
-				resultBuilder.append("Buzz");
+				resultBuilder.append("Buzz ");
 			} else {
-				resultBuilder.append(Integer.toString(inputArray[i]));
+				resultBuilder.append(Integer.toString(inputArray[i])).append(" ");
 			}
 		}
 		
-		return resultBuilder.toString();
+		return resultBuilder.toString().trim();
 	}
 	
 	private int[] buildInputArray(int numberOfItems) {
@@ -34,5 +34,5 @@ public class FizzBuzzService {
 		
 		return inputArray;
 	}
-
+	
 }
