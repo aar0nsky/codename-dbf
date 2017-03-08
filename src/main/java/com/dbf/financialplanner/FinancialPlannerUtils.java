@@ -11,10 +11,7 @@ public class FinancialPlannerUtils {
 	}
 
 	public double calculateDisposableIncome(double totalAmount) {
-		double housingExpense = HOUSING_EXPENSE_PERCENTAGE;
-		double foodExpense = FOOD_EXPENSE_PERCENTAGE;
-		
-		return totalAmount - (totalAmount * (housingExpense/PERCENTAGE_DIVISOR) + totalAmount * (foodExpense/PERCENTAGE_DIVISOR));
+		return totalAmount - (totalAmount * (HOUSING_EXPENSE_PERCENTAGE/PERCENTAGE_DIVISOR) + totalAmount * (FOOD_EXPENSE_PERCENTAGE/PERCENTAGE_DIVISOR));
 	}
 
 	public double calculateDisposableIncome(Budget budget) {
