@@ -11,7 +11,11 @@ public class Budget {
 		this.foodExpense = foodExpense;
 	}
 	
-	public Budget() {}
+	public Budget() {
+		this.totalAmount = 0;
+		this.housingExpense = 0;
+		this.foodExpense = 0;
+	}
 
 	public double getTotalAmount() {
 		return totalAmount;
