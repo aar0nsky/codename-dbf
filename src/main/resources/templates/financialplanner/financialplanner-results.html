@@ -10,5 +10,8 @@
 <body>
 	<h1>This month, you saved:</h1>
     <p th:text="${amountSaved}" />
+    
+    <h1>And if you saved that much every month for 10 years, with an annualized interest rate of 6% compounded annually, you would have: </h1>
+    <p th:text="${savingsAfter10Years}" />
 </body>
 </html>

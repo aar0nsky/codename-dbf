@@ -22,8 +22,10 @@ public class FinancialPlannerController {
 		Budget budget = new Budget(income, housing, food);
 		
 		double amountSaved = financialPlannerService.calculateSavings(budget, savings);
-		
 		model.addAttribute("amountSaved", amountSaved);
+		
+		double savingsAfter10Years = financialPlannerService.calculateCompoundedSavings(amountSaved*12, 6, 1, 10, amountSaved*12);
+		model.addAttribute("savingsAfter10Years", savingsAfter10Years);
 		
         return "financialplanner/financialplanner-results";
     }
