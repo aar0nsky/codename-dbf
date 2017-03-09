@@ -20,6 +20,7 @@ public class FinancialPlannerUtils {
 		return budget.getTotalAmount() - (budget.getTotalAmount() * (budget.getHousingExpense()/PERCENTAGE_DIVISOR) + budget.getTotalAmount() * (budget.getFoodExpense()/PERCENTAGE_DIVISOR));
 	}
 
+	//heinous type switching of return used to round result.  Want to return double from util, string from service.
 	public double compound(double principal, double interestRate, int compoundingFrequency, int years) {
 		DecimalFormat formatter = new DecimalFormat("##.00");
 		return Double.parseDouble(formatter.format(principal * Math.pow(1 + interestRate/PERCENTAGE_DIVISOR/compoundingFrequency, compoundingFrequency*years)));
