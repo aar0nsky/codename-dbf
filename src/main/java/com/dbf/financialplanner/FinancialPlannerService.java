@@ -6,7 +6,7 @@ public class FinancialPlannerService {
 
 	public double calculateSavings(Budget budget, double savingsPercent) {
 		double disposableIncome = utils.calculateDisposableIncome(budget);
-		return utils.calculateAmountSaved(disposableIncome, 5);
+		return utils.calculateAmountSaved(disposableIncome, savingsPercent);
 	}
 	
 	
