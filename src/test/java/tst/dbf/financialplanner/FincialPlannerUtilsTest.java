@@ -59,5 +59,27 @@ public class FincialPlannerUtilsTest {
 		assertThat(remaining, is(30.0));
 	}
 	
+	@Test
+	public void testCompound_Annually() throws Exception {
+		double principal = 1000;
+		double interestRate = 5;
+		int compoundingFrequency = 1;
+		int years = 1;
+		
+		double futureValue = utils.compound(principal, interestRate, compoundingFrequency, years);
+		
+		assertThat(futureValue, is(1050.0));
+	}
 	
+	@Test
+	public void testCompound_Monthly_Over10Years() throws Exception {
+		double principal = 1000;
+		double interestRate = 5;
+		int compoundingFrequency = 12;
+		int years = 10;
+		
+		double futureValue = utils.compound(principal, interestRate, compoundingFrequency, years);
+		
+		assertThat(futureValue, is(1647.01));
+	}
 }
