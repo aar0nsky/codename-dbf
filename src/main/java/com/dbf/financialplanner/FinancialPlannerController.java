@@ -4,8 +4,10 @@ import java.text.NumberFormat;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class FinancialPlannerController {
@@ -41,5 +43,21 @@ public class FinancialPlannerController {
 		
         return "financialplanner/financialplanner-results";
     }
+	
+	@RequestMapping("/financialplanner-startpage")
+    public String startPage() {
+        return "financialplanner/financialplanner-startpage";
+    }
+	
+	@ResponseBody
+	@RequestMapping(value = "/financialplanner-execute")
+	public ExecutionResult getSearchResultViaAjax(@RequestParam double monthlySavings, @RequestParam double accountBalance, @RequestParam double yearNumber) {
+
+		ExecutionResult result = new ExecutionResult(monthlySavings, accountBalance, yearNumber);
+		//logic
+		return result;
+
+	}
+
 
 }
