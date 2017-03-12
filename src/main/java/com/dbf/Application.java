@@ -32,9 +32,11 @@ public class Application implements CommandLineRunner {
         jdbcTemplate.execute("DROP TABLE customers IF EXISTS");
         jdbcTemplate.execute("CREATE TABLE customers(" +
                 "id SERIAL, first_name VARCHAR(255), last_name VARCHAR(255))");
-
+        
+        String[] names = {"John Woo", "Jeff Dean", "Josh Bloch", "Josh Long"};
+        
         // Split up the array of whole names into an array of first/last names
-        List<Object[]> splitUpNames = Arrays.asList("John Woo", "Jeff Dean", "Josh Bloch", "Josh Long").stream()
+        List<Object[]> splitUpNames = Arrays.asList(names).stream()
                 .map(name -> name.split(" "))
                 .collect(Collectors.toList());
 
