@@ -39,8 +39,8 @@ td {
 }
 
 .talkingDollar {
-	height: 25%;
-	width: 25%;
+	height: 35%;
+	width: 35%;
 }
 
 .infoSectionImage {
@@ -53,4 +53,14 @@ td {
 .infoSectionText {
 	display: inline-block;
 	width: 600px;
+}
+
+.resultsSectionSavings, .resultsSectionSavings input, .resultsSectionBalance, .resultsSectionBalance input, .yearCount {
+	display: inline-block;
+	width: 33%;
+	text-align: center;
+}
+
+.buttonsSection {
+	text-align: center;
 }
