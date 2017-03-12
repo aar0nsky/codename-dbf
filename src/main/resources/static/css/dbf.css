@@ -29,3 +29,38 @@ td {
 	text-align: center;
 	font-size: 25px;
 }
+
+.topHeading {
+	text-align: center;
+}
+
+.infoSection {
+	text-align: center;
+}
+
+.talkingDollar {
+	height: 35%;
+	width: 35%;
+}
+
+.infoSectionImage {
+	display: inline-block; 
+	width: 45%;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+.infoSectionText {
+	display: inline-block;
+	width: 600px;
+}
+
+.resultsSectionSavings, .resultsSectionSavings input, .resultsSectionBalance, .resultsSectionBalance input, .yearCount {
+	display: inline-block;
+	width: 33%;
+	text-align: center;
+}
+
+.buttonsSection {
+	text-align: center;
+}

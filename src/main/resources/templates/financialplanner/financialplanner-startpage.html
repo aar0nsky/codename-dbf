@@ -8,18 +8,43 @@
     <script src="js/dbf.js"></script>
 </head>
 <body>
-	<h1>Let's do this</h1>
-	<form action="/financialplanner-XXXXX" method="post">
-		<label for="monthlySavings">Savings per Month: </label>
-		<input type="number" id="monthlySavings" name="monthlySavings" /> <br/>
+	<h1 class="topHeading">I'm Getting Too Old For This Sh!t: A Retirement Calculator</h1>
+	
+	<div class="infoSection">
+		<div class="infoSectionText"><p>Hi it's me, your hard-earned money. You and I are going to grow old together! 
+		Using the input fields and buttons below, we will simulate 50 years of savings and growth. The numbers may 
+		start out small, but if we keep at it we can try to retire as millionaires! </p>
 		
-		<label for="accountBalance">Account Balance: </label>
-		<input type="number" id="accountBalance" name="accountBalance" /> <br/>
-	</form>
-	<br/>
-	<div id="yearCount" class="yearCount"><span id="yearNumber">10</span> years</div>
+		<p>To begin fill in the fields with the amount of money you can save each month right now, as well as the total
+		balance of your account. These numbers will give us a good idea of where we're at and where we would like to go. </p>
+		
+		<p>Once you have filled those fields out, click the Good Thing button or the Bad Thing button to simulate 10 years
+		of savings and growth.  After five clicks, we'll see how close we are to the retirement of our dreams!</p>
+		</div>
+		<div class="infoSectionImage"><img class="talkingDollar" src="images/dollar-talking.jpg"/></div> 
+	</div>
+	<br/> <br/> <br/>
+	<div class="resultsSection">
+		<div class="resultsSectionSavings">
+			<form>
+				<label for="monthlySavings">Savings per Month: </label>
+				<input type="number" id="monthlySavings" name="monthlySavings" />
+			</form>
+		</div>
+		
+		<div id="yearCount" class="yearCount"><span id="yearNumber">0</span> years</div>
+		
+		<div class="resultsSectionBalance">
+			<form>
+				<label for="accountBalance">Account Balance: </label>
+				<input type="number" id="accountBalance" name="accountBalance" />
+			</form>
+		</div>
+	</div>
 	<br/> <br/>
-	<button type="button" id="goodThingButton" class="goodThingButton" >Good Thing Button</button>
-	<button type="button" id="badThingButton" class="badThingButton" >Bad Thing Button</button>
+	<div class="buttonsSection">
+		<button type="button" id="goodThingButton" class="goodThingButton" >Good Thing Button</button>
+		<button type="button" id="badThingButton" class="badThingButton" >Bad Thing Button</button>
+	</div>
 </body>
 </html>

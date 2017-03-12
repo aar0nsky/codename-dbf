@@ -4,7 +4,6 @@ import java.text.NumberFormat;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -50,14 +49,29 @@ public class FinancialPlannerController {
     }
 	
 	@ResponseBody
-	@RequestMapping(value = "/financialplanner-execute")
-	public ExecutionResult getSearchResultViaAjax(@RequestParam double monthlySavings, @RequestParam double accountBalance, @RequestParam double yearNumber) {
+	@RequestMapping(value = "/financialplanner-executeGoodThing")
+	public ExecutionResult getGoodResultViaAjax(@RequestParam double monthlySavings, @RequestParam double accountBalance, @RequestParam double yearNumber) {
 
-		ExecutionResult result = new ExecutionResult(monthlySavings, accountBalance, yearNumber);
-		//logic
+		double resultMonthlySavings = monthlySavings + 200;
+		double resultAccountBalance = financialPlannerService.calculateCompoundedSavings(accountBalance, 9, 1, 10, resultMonthlySavings*12);
+		double resultYearNumber = yearNumber + 10;
+		
+		ExecutionResult result = new ExecutionResult(resultMonthlySavings, resultAccountBalance, resultYearNumber);
 		return result;
 
 	}
 
+	@ResponseBody
+	@RequestMapping(value = "/financialplanner-executeBadThing")
+	public ExecutionResult getBadResultViaAjax(@RequestParam double monthlySavings, @RequestParam double accountBalance, @RequestParam double yearNumber) {
+
+		double resultMonthlySavings = monthlySavings*0.5;
+		double resultAccountBalance = financialPlannerService.calculateCompoundedSavings(accountBalance, 4, 1, 10, resultMonthlySavings*12);
+		double resultYearNumber = yearNumber + 10;
+		
+		ExecutionResult result = new ExecutionResult(resultMonthlySavings, resultAccountBalance, resultYearNumber);
+		return result;
+
+	}
 
 }
