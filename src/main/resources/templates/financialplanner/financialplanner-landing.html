@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Financial Planner Landing</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="css/dbf.css" />
+</head>
+<body>
+	<h1>Let's take a look at your finances this month...</h1>
+	<form action="/financialplanner-results" method="post">
+		<label for="income">Monthly Income: </label>
+		<input type="number" id="income" name="income" /> <br/>
+		
+		<label for="housing">Housing Expense (as percentage of income): </label>
+		<input type="number" id="housing" name="housing" /> <br/>
+		
+		<label for="food">Food Expense (as percentage of income): </label>
+		<input type="number" id="food" name="food" /> <br/>
+		
+		<label for="savings">What Percent Of Disposable Income Would You Like to Save?: </label>
+		<input type="number" id="savings" name="savings" /> <br/>
+		 
+		<input type="submit" />
+	</form>
+</body>
+</html>

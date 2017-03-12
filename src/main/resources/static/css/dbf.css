@@ -3,5 +3,29 @@ body {
 }
 
 h1 {
-	font-color: blue;
+	color: blue;
+}
+
+label, input {
+	display: block;
+}
+
+table, th, td {
+	border: 2px solid black;
+}
+
+th, td {
+	width: 1000px;
+}
+
+th {
+	height: 48px;
+	color: blue;
+	font-size: 20px;
+}
+
+td {
+	height: 100px;
+	text-align: center;
+	font-size: 25px;
 }

@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Financial Planner Results</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="css/dbf.css" />
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/dbf.js"></script>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>This month, you saved:</th>
+			<th>And if you saved that much every month for 10 years, with an interest rate of 9% compounded annually, you would have:</th>
+		</tr>
+		<tr>
+		    <td th:text="${amountSaved}"></td>
+		    <td th:text="${amountSavedAfter10Years}"> </td>
+	    </tr>
+   	</table>
+   	<br/><br/><br/>
+   	<table>
+		<tr>
+			<th>If you saved half as much:</th>
+			<th>And let it cook for 10 years:</th>
+		</tr>
+		<tr>
+		    <td th:text="${halfAmountSaved}"></td>
+		    <td th:text="${halfAmountSavedAfter10Years}"> </td>
+	    </tr>
+   	</table>
+   	<br/><br/><br/>
+   	<table>
+		<tr>
+			<th>But if you balled out 2x:</th>
+			<th>You'd make bank after 10 years: </th>
+		</tr>
+		<tr>
+		    <td th:text="${doubleAmountSaved}"></td>
+		    <td th:text="${doubleAmountSavedAfter10Years}"> </td>
+	    </tr>
+   	</table>
+</body>
+</html>
