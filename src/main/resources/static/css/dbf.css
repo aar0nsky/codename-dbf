@@ -55,7 +55,7 @@ td {
 	width: 600px;
 }
 
-.resultsSectionSavings, .resultsSectionSavings input, .resultsSectionBalance, .resultsSectionBalance input, .yearCount {
+.resultsSectionSavings, .resultsSectionSavings input, .resultsSectionBalance, .resultsSectionBalance input, .yearCount, .ageDD {
 	display: inline-block;
 	width: 33%;
 	text-align: center;
@@ -85,4 +85,10 @@ td {
 
 .badThingButton {
 	background-color: Red;
+}
+
+.inputSection {
+
+	text-align: center;
+	
 }

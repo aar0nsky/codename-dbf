@@ -35,4 +35,16 @@ $(document).ready(function() {
         		$("#yearNumber").html(data.yearNumber);
         }});
     });
+	
+	$(function(){
+	    var $select = $(".ageDD");
+	    for (i=1;i<=100;i++){
+	    	if (i == 20){
+	    		$select.append($('<option selected="selected"></option>').val(i).html(i))
+	    	}
+	    	else {
+		        $select.append($('<option></option>').val(i).html(i))
+	    	}
+	    }
+	});
 });
