@@ -8,27 +8,31 @@ $(document).ready(function() {
 	
 	$('.goodThingButton').click(function(){
         $.ajax({
-        	url: "financialplanner-execute", 
+        	url: "financialplanner-executeGoodThing", 
         	data: {
                 monthlySavings: $('#monthlySavings').val(),
                 accountBalance: $('#accountBalance').val(),
                 yearNumber: $('#yearNumber').text()
              },
         	success: function(data){
-            $("#yearNumber").html(data.yearNumber + 1);
+        		$('#monthlySavings').val(data.monthlySavings);
+        		$('#accountBalance').val(data.accountBalance),
+        		$("#yearNumber").html(data.yearNumber);
         }});
     });
 	
 	$('.badThingButton').click(function(){
         $.ajax({
-        	url: "financialplanner-execute", 
+        	url: "financialplanner-executeBadThing", 
         	data: {
         		monthlySavings: $('#monthlySavings').val(),
                 accountBalance: $('#accountBalance').val(),
                 yearNumber: $('#yearNumber').text()
              },
         	success: function(data){
-    		$("#yearNumber").html(data.yearNumber + 1);
+        		$('#monthlySavings').val(data.monthlySavings);
+        		$('#accountBalance').val(data.accountBalance),
+        		$("#yearNumber").html(data.yearNumber);
         }});
     });
 });
