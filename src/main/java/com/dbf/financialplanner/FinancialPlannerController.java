@@ -50,27 +50,31 @@ public class FinancialPlannerController {
 	
 	@ResponseBody
 	@RequestMapping(value = "/financialplanner-executeGoodThing")
-	public ExecutionResult getGoodResultViaAjax(@RequestParam double monthlySavings, @RequestParam double accountBalance, @RequestParam double yearNumber) {
+	public ExecutionResult getGoodResultViaAjax(@RequestParam double monthlySavings, @RequestParam double accountBalance, @RequestParam double yearNumber, @RequestParam int maxYear) {
 
-		double resultMonthlySavings = monthlySavings + 200;
-		double resultAccountBalance = financialPlannerService.calculateCompoundedSavings(accountBalance, 9, 1, 10, resultMonthlySavings*12);
-		double resultYearNumber = yearNumber + 10;
-		
-		ExecutionResult result = new ExecutionResult(resultMonthlySavings, resultAccountBalance, resultYearNumber);
-		return result;
-
+		while(yearNumber < maxYear) {
+			double resultMonthlySavings = monthlySavings + 200;
+			double resultAccountBalance = financialPlannerService.calculateCompoundedSavings(accountBalance, 9, 1, 10, resultMonthlySavings*12);
+			double resultYearNumber = yearNumber + 10;
+			ExecutionResult result = new ExecutionResult(resultMonthlySavings, resultAccountBalance, resultYearNumber, maxYear);
+			return result;
+		}
+		return new ExecutionResult();
 	}
 
 	@ResponseBody
 	@RequestMapping(value = "/financialplanner-executeBadThing")
-	public ExecutionResult getBadResultViaAjax(@RequestParam double monthlySavings, @RequestParam double accountBalance, @RequestParam double yearNumber) {
-
+	public ExecutionResult getBadResultViaAjax(@RequestParam double monthlySavings, @RequestParam double accountBalance, @RequestParam double yearNumber, @RequestParam int maxYear) {
+		while(yearNumber < maxYear) {
 		double resultMonthlySavings = monthlySavings*0.5;
 		double resultAccountBalance = financialPlannerService.calculateCompoundedSavings(accountBalance, 4, 1, 10, resultMonthlySavings*12);
 		double resultYearNumber = yearNumber + 10;
-		
-		ExecutionResult result = new ExecutionResult(resultMonthlySavings, resultAccountBalance, resultYearNumber);
+		ExecutionResult result = new ExecutionResult(resultMonthlySavings, resultAccountBalance, resultYearNumber, maxYear);
 		return result;
+		}
+		
+		return new ExecutionResult();
+		
 
 	}
 

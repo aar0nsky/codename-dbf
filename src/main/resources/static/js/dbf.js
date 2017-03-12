@@ -12,7 +12,8 @@ $(document).ready(function() {
         	data: {
                 monthlySavings: $('#monthlySavings').val(),
                 accountBalance: $('#accountBalance').val(),
-                yearNumber: $('#yearNumber').text()
+                yearNumber: $('#yearNumber').text(),
+                maxYear: $('#ageDD').val()
              },
         	success: function(data){
         		$('#monthlySavings').val(data.monthlySavings);
@@ -27,12 +28,14 @@ $(document).ready(function() {
         	data: {
         		monthlySavings: $('#monthlySavings').val(),
                 accountBalance: $('#accountBalance').val(),
-                yearNumber: $('#yearNumber').text()
+                yearNumber: $('#yearNumber').text(),
+                maxYear: $('#ageDD').val()
              },
         	success: function(data){
         		$('#monthlySavings').val(data.monthlySavings);
         		$('#accountBalance').val(data.accountBalance),
         		$("#yearNumber").html(data.yearNumber);
+        		
         }});
     });
 	
